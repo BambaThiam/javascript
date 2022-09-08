@@ -152,6 +152,79 @@ boxes.forEach((box) => {
 document.body.onclick = () => {
   console.log("click");
 };
-//Voir correction pour les Usercapture...
+//Voir correction pour les Usercapture, pour faire passer des choses avant...
 
 console.log(navigator.userAgent);
+
+//-----------------------------------
+//stop propagation
+questionContainer.addEventListener("click", (e) => {
+  alert("Test !");
+  e.stopPropagation();
+}); // bloque la propagation
+
+//removeEvenLister => savoir que ça existe
+
+//-------------------------------------------
+//BOM
+//window.open("http://google.com", "cours", "height=600", "width=800"); //ouvre une fenetre
+//window.close(); //ferme la fenetre
+
+btn2.addEventListener("click", () => {
+  confirm("Voulez vous vraiment vous tromper ?");
+});
+
+let answer;
+btn1.addEventListener("click", () => {
+  answer = prompt("Entrez votre nom ?");
+  questionContainer.innerHTML += `<h3>Bravo ${answer}. </h3>`;
+});
+
+// Timer, compte à rebours
+setTimeout(() => {
+  questionContainer.style.borderRadius = "300px";
+}, 2000); //joue la fonction dans 2 secondes
+
+// let interval = setInterval(() => {
+//   document.body.innerHTML += `
+//     <div class='box'>
+//       <h2>Nouvelle Boite !</h2>
+//     </div>`;
+// }, 1000); //crée des elts chaque 1seconde
+
+// document.body.addEventListener("click", () => {
+//   clearInterval(interval);
+// }); //arrête l'intervalle si clique sur body
+
+// document.body.addEventListener("click", (e) => {
+//   e.target.remove();
+// }); //supprime l'element cliqué du BOM
+
+// Location ---------
+// console.log(location.href); //localise href
+// console.log(location.host); //localise host
+// console.log(location.pathname); //localise lien dossier
+// console.log(location.search); //localise
+
+// location.replace("http://lequipe.fr");//remplace la page par lien dedans
+// window.onload = () => {
+//   location.href = "http://twitter.fr";
+// }; //rediriger vers une autre page
+
+// Navigator ----------
+//console.log(navigator.userAgent);
+//géolocalisation utilisateur
+//https://developer.mozilla.org/fr/docs/Web/API/Geolocation/getCurrentPosition
+
+// History
+//console.log(history); //consult historique
+// window.history.back(); //retour en arrière quand utilisateur valide klk chose par exemple
+//history.go(-2)//retour 2page en arrière
+
+//--------------------------------
+// Setproperty
+
+window.addEventListener("mousemove", (e) => {
+  nav.style.setProperty("--x", e.layerX + "px");
+  nav.style.setProperty("--y", e.layerY + "px");
+});

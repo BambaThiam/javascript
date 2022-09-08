@@ -38,3 +38,7 @@ button:hover {
 #clear {
   grid-area: reset;
 }
+
+#result {
+  grid-area: res;
+}

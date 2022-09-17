@@ -14,23 +14,35 @@ const pop = document.getElementById("popup");
 // console.log(nav, improv, pop);
 
 let lastScrollY = 0;
-let scrollImpro = 200;
+let scrollValue =
+  (window.screenY + window.innerHeight) / document.body.offsetHeight;
+let playOnce = 1;
 
 window.addEventListener("scroll", () => {
+  // Navbar
   if (window.scrollY < lastScrollY) {
     nav.style.height = "90px";
   } else {
     nav.style.height = "45px";
   }
-
   lastScrollY = window.scrollY;
-});
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY < scrollImpro) {
-    console.log(improv);
-  } else {
-    improv.classList.add("imgImproviseAppear");
-    improv.style.opacity = 1;
+  //Image
+  if (scrollValue < 0.45) {
+    imgImprovise.style.transform = "none";
+    imgImprovise.style.opacity = 1;
   }
+
+  //Popup
+  if (scrollValue < 0.85 && playOnce == 1) {
+    popup.style.transform = "none";
+    popup.style.opacity = 1;
+  }
+  closeBtn.addEventListener("click", () => {
+    do {
+      pop.style.transform = 500;
+      pop.style.opacity = 0;
+      playOnce++;
+    } while (playOnce == 1);
+  });
 });

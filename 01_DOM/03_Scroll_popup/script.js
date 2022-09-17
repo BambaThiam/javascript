@@ -16,7 +16,7 @@ const pop = document.getElementById("popup");
 let lastScrollY = 0;
 let scrollValue =
   (window.screenY + window.innerHeight) / document.body.offsetHeight;
-let playOnce = 1;
+let playOnce = true;
 
 window.addEventListener("scroll", () => {
   // Navbar
@@ -34,15 +34,13 @@ window.addEventListener("scroll", () => {
   }
 
   //Popup
-  if (scrollValue < 0.85 && playOnce == 1) {
+  if (scrollValue < 0.85 && playOnce) {
     popup.style.transform = "none";
     popup.style.opacity = 1;
+    playOnce = false;
   }
-  closeBtn.addEventListener("click", () => {
-    do {
-      pop.style.transform = 500;
-      pop.style.opacity = 0;
-      playOnce++;
-    } while (playOnce == 1);
-  });
+});
+closeBtn.addEventListener("click", () => {
+  pop.style.transform = 500;
+  pop.style.opacity = 0;
 });

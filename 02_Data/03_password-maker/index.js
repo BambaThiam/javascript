@@ -9,7 +9,7 @@ const generatePassword = () => {
   let data = [];
   let password = "";
 
-  if (lowercase.checked) data.push(...dataLowercase);
+  if (lowercase.checked) data.push(...dataLowercase); // les 3points permet de casser et de regrouper tous les tableaux =>(spred opérator)
   if (uppercase.checked) data.push(...dataUppercase);
   if (number.checked) data.push(...dataNumbers);
   if (symbols.checked) data.push(...dataSymbols);

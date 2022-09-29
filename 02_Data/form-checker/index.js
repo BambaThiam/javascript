@@ -124,11 +124,13 @@ form.addEventListener("submit", (e) => {
 
   if (pseudo && email && password && confirmPass) {
     const data = {
-      pseudo,
+      pseudo, // idem pseudo: pseudo
       email,
       password,
     };
     console.log(data);
+
+    //reinitialiser les valeurs à 0 aprés envoie de la data
 
     inputs.forEach((input) => (input.value = ""));
     progressBar.classList = "";

@@ -1,0 +1,33 @@
+* {
+  background: rgb(200, 112, 23);
+  margin: 0;
+  overflow: hidden;
+  background: none;
+}
+
+body {
+  margin-top: 10%;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  /* background: rgb(200, 112, 23); */
+  background: linear-gradient(143deg, #b400ff 0%, #ffa000 80%);
+}
+
+.windw {
+  margin: 0;
+  align-items: center;
+  text-align: center;
+  background: rgb(17, 242, 234);
+  padding: 10px 30px;
+  border-radius: 15px;
+}
+
+input {
+  margin-top: 10%;
+  border: none;
+  /* box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.66); */
+  border-radius: 40px;
+  background: rgb(253, 159, 68);
+  padding: 10px;
+}

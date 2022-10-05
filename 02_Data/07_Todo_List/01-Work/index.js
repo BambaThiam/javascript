@@ -3,11 +3,10 @@
 // Ajouter sur le dom ce qui est tapé dans le form à la validation du form
 // let input = document.querySelector("input");
 // console.log(input.value);
-document.addEventListener("keydown", (e) => {
-  let input = document.querySelector("input");
-  if (e.code === "Enter") {
-    console.log(input.value);
-  }
+document.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  list.innerHTML += `<ul>${item.value}</ul>`;
 });
 
 // Supprimer un todo lorsque l'on click dessus (.remove())

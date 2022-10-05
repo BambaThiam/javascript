@@ -9,12 +9,17 @@
   </head>
   <body>
     <div class="windw">
+      <h1>TODO LIST</h1>
       <form action="">
-        <h1>TODO LIST</h1>
-        <input type="text" />
-        <h2></h2>
-        <span></span>
+        <input
+          type="text"
+          id="item"
+          placeholder="A faire"
+          autocomplete="off"
+          minlength="3"
+        />
       </form>
+      <ul id="list"></ul>
     </div>
   </body>
   <script src="./index.js"></script>
